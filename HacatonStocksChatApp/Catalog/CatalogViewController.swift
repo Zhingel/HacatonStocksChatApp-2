@@ -11,7 +11,9 @@ class CatalogViewController: UICollectionViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .yellow
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        let fetchData = FetchData()
+        fetchData.fetchData()
+        collectionView.register(CatalogViewCell.self, forCellWithReuseIdentifier: "cell")
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         10
@@ -21,8 +23,8 @@ class CatalogViewController: UICollectionViewController, UICollectionViewDelegat
         return CGSize(width: width, height: 90)
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .gray
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatalogViewCell
+    
      
         return cell
     }

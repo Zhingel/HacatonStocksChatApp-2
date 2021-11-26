@@ -18,6 +18,8 @@
 		EE7F5FF7275174C900878249 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FF6275174C900878249 /* CatalogViewController.swift */; };
 		EE7F5FFA2751781100878249 /* CatalogViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FF92751781100878249 /* CatalogViewCell.swift */; };
 		EE7F5FFC2751791000878249 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FFB2751791000878249 /* ProfileViewController.swift */; };
+		EE7F5FFE27517DE200878249 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FFD27517DE200878249 /* FetchData.swift */; };
+		EE7F600127517E3100878249 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F600027517E3100878249 /* Ticker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		EE7F5FF6275174C900878249 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		EE7F5FF92751781100878249 /* CatalogViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewCell.swift; sourceTree = "<group>"; };
 		EE7F5FFB2751791000878249 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EE7F5FFD27517DE200878249 /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		EE7F600027517E3100878249 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				EE7F5FE1275172ED00878249 /* FeedViewController.swift */,
 				EE7F5FF4275173D300878249 /* MainTabBarController.swift */,
 				EE7F5FFB2751791000878249 /* ProfileViewController.swift */,
+				EE7F5FFF27517E1C00878249 /* Model */,
 				EE7F5FF8275177FC00878249 /* Catalog */,
 				EE7F5FF12751736F00878249 /* Extensions */,
 				EE7F5FE3275172ED00878249 /* Main.storyboard */,
@@ -94,8 +99,17 @@
 			children = (
 				EE7F5FF6275174C900878249 /* CatalogViewController.swift */,
 				EE7F5FF92751781100878249 /* CatalogViewCell.swift */,
+				EE7F5FFD27517DE200878249 /* FetchData.swift */,
 			);
 			path = Catalog;
+			sourceTree = "<group>";
+		};
+		EE7F5FFF27517E1C00878249 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE7F600027517E3100878249 /* Ticker.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +190,8 @@
 				EE7F5FF5275173D300878249 /* MainTabBarController.swift in Sources */,
 				EE7F5FE0275172ED00878249 /* SceneDelegate.swift in Sources */,
 				EE7F5FFC2751791000878249 /* ProfileViewController.swift in Sources */,
+				EE7F600127517E3100878249 /* Ticker.swift in Sources */,
+				EE7F5FFE27517DE200878249 /* FetchData.swift in Sources */,
 				EE7F5FF32751738500878249 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
