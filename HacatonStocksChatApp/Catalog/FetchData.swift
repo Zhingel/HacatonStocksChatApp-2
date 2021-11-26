@@ -17,7 +17,7 @@ class FetchData {
 //
 //        fetchData()
 //    }
-    func fetchData() {
+    func fetchData(completion: @escaping (Ticker) -> ()) {
         let url = URL(string: "https://financialmodelingprep.com/api/v3/search?query=\(searchingText)&limit=10&exchange=NASDAQ&apikey=\(APIKey)")
 
         var request = URLRequest(url: url!)
@@ -36,11 +36,11 @@ class FetchData {
     //        let json = try! JSONSerialization.jsonObject(with: data, options: [])
             
             let ticker = try! JSONDecoder().decode(Ticker.self, from: data)
-            DispatchQueue.main.async {
-                self.tickers = ticker
-                print(self.tickers)
-               
-            }
+//            DispatchQueue.main.async {
+//                self.tickers = ticker
+            //    print(self.tickers)
+                completion(ticker)
+//            }
         }
 
         task.resume()
