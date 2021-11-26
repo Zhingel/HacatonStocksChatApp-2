@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		EE7F5FDE275172ED00878249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FDD275172ED00878249 /* AppDelegate.swift */; };
 		EE7F5FE0275172ED00878249 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FDF275172ED00878249 /* SceneDelegate.swift */; };
-		EE7F5FE2275172ED00878249 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FE1275172ED00878249 /* ViewController.swift */; };
+		EE7F5FE2275172ED00878249 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FE1275172ED00878249 /* FeedViewController.swift */; };
 		EE7F5FE5275172ED00878249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7F5FE3275172ED00878249 /* Main.storyboard */; };
 		EE7F5FE7275172ED00878249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7F5FE6275172ED00878249 /* Assets.xcassets */; };
 		EE7F5FEA275172ED00878249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7F5FE8275172ED00878249 /* LaunchScreen.storyboard */; };
+		EE7F5FF32751738500878249 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FF22751738500878249 /* Extensions.swift */; };
+		EE7F5FF5275173D300878249 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FF4275173D300878249 /* MainTabBarController.swift */; };
+		EE7F5FF7275174C900878249 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FF6275174C900878249 /* CatalogViewController.swift */; };
+		EE7F5FFA2751781100878249 /* CatalogViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FF92751781100878249 /* CatalogViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE7F5FDA275172ED00878249 /* HacatonStocksChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HacatonStocksChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7F5FDD275172ED00878249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE7F5FDF275172ED00878249 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE7F5FE1275172ED00878249 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE7F5FE1275172ED00878249 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EE7F5FE4275172ED00878249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE7F5FE6275172ED00878249 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE7F5FE9275172ED00878249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE7F5FEB275172ED00878249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE7F5FF22751738500878249 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EE7F5FF4275173D300878249 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		EE7F5FF6275174C900878249 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		EE7F5FF92751781100878249 /* CatalogViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +66,33 @@
 			children = (
 				EE7F5FDD275172ED00878249 /* AppDelegate.swift */,
 				EE7F5FDF275172ED00878249 /* SceneDelegate.swift */,
-				EE7F5FE1275172ED00878249 /* ViewController.swift */,
+				EE7F5FE1275172ED00878249 /* FeedViewController.swift */,
+				EE7F5FF4275173D300878249 /* MainTabBarController.swift */,
+				EE7F5FF8275177FC00878249 /* Catalog */,
+				EE7F5FF12751736F00878249 /* Extensions */,
 				EE7F5FE3275172ED00878249 /* Main.storyboard */,
 				EE7F5FE6275172ED00878249 /* Assets.xcassets */,
 				EE7F5FE8275172ED00878249 /* LaunchScreen.storyboard */,
 				EE7F5FEB275172ED00878249 /* Info.plist */,
 			);
 			path = HacatonStocksChatApp;
+			sourceTree = "<group>";
+		};
+		EE7F5FF12751736F00878249 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EE7F5FF22751738500878249 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EE7F5FF8275177FC00878249 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				EE7F5FF6275174C900878249 /* CatalogViewController.swift */,
+				EE7F5FF92751781100878249 /* CatalogViewCell.swift */,
+			);
+			path = Catalog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE7F5FE2275172ED00878249 /* ViewController.swift in Sources */,
+				EE7F5FF7275174C900878249 /* CatalogViewController.swift in Sources */,
+				EE7F5FE2275172ED00878249 /* FeedViewController.swift in Sources */,
 				EE7F5FDE275172ED00878249 /* AppDelegate.swift in Sources */,
+				EE7F5FFA2751781100878249 /* CatalogViewCell.swift in Sources */,
+				EE7F5FF5275173D300878249 /* MainTabBarController.swift in Sources */,
 				EE7F5FE0275172ED00878249 /* SceneDelegate.swift in Sources */,
+				EE7F5FF32751738500878249 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
