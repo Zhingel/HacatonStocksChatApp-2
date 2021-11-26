@@ -20,7 +20,6 @@ class CatalogViewController: UICollectionViewController, UICollectionViewDelegat
                 print(self.tickers)
             }
         }
-        print(tickers)
         collectionView.register(CatalogViewCell.self, forCellWithReuseIdentifier: "cell")
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -29,6 +28,11 @@ class CatalogViewController: UICollectionViewController, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.bounds.width
         return CGSize(width: width, height: 90)
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tickerProfileController = TickerProfileController()
+        tickerProfileController.tickerName = tickers[indexPath.item].symbol
+        navigationController?.pushViewController(tickerProfileController, animated: false)
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatalogViewCell

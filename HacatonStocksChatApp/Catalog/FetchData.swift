@@ -32,22 +32,14 @@ class FetchData {
                 print("Data is empty")
                 return
             }
-
-    //        let json = try! JSONSerialization.jsonObject(with: data, options: [])
-            
             let ticker = try! JSONDecoder().decode(Ticker.self, from: data)
-//            DispatchQueue.main.async {
-//                self.tickers = ticker
-            //    print(self.tickers)
-                completion(ticker)
-//            }
+            completion(ticker)
         }
-
         task.resume()
          
 
     }
-    func fetchDataStockInfo(tickerSymbol: String) {
+    func fetchDataStockInfo(tickerSymbol: String,  completion: @escaping (TickerInfoElement) -> ()) {
         let url = URL(string: "https://financialmodelingprep.com/api/v3/profile/\(tickerSymbol)?apikey=\(APIKey)")
 
         var request = URLRequest(url: url!)
@@ -65,10 +57,11 @@ class FetchData {
             }
             
             let ticker = try! JSONDecoder().decode(TickerInfo.self, from: data)
-            DispatchQueue.main.async {
-                self.tickerInfo = ticker
-                print(self.tickerInfo)
-            }
+            completion(ticker[0])
+//            DispatchQueue.main.async {
+//                self.tickerInfo = ticker
+//                print(self.tickerInfo)
+//            }
         }
 
         task.resume()

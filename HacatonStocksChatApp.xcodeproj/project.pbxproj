@@ -21,6 +21,7 @@
 		EE7F5FFC2751791000878249 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FFB2751791000878249 /* ProfileViewController.swift */; };
 		EE7F5FFE27517DE200878249 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FFD27517DE200878249 /* FetchData.swift */; };
 		EE7F600127517E3100878249 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F600027517E3100878249 /* Ticker.swift */; };
+		EE7F600327518DF300878249 /* TickerProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F600227518DF300878249 /* TickerProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EE7F5FFB2751791000878249 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EE7F5FFD27517DE200878249 /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		EE7F600027517E3100878249 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		EE7F600227518DF300878249 /* TickerProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,6 @@
 				635953FE461CB892B13700B0 /* Pods-HacatonStocksChatApp.debug.xcconfig */,
 				CD5BA85F4CEA786325E24424 /* Pods-HacatonStocksChatApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -123,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				EE7F5FF6275174C900878249 /* CatalogViewController.swift */,
+				EE7F600227518DF300878249 /* TickerProfileController.swift */,
 				EE7F5FF92751781100878249 /* CatalogViewCell.swift */,
 				EE7F5FFD27517DE200878249 /* FetchData.swift */,
 			);
@@ -257,6 +259,7 @@
 				EE7F5FDE275172ED00878249 /* AppDelegate.swift in Sources */,
 				EE7F5FFA2751781100878249 /* CatalogViewCell.swift in Sources */,
 				EE7F5FF5275173D300878249 /* MainTabBarController.swift in Sources */,
+				EE7F600327518DF300878249 /* TickerProfileController.swift in Sources */,
 				EE7F5FE0275172ED00878249 /* SceneDelegate.swift in Sources */,
 				EE7F5FFC2751791000878249 /* ProfileViewController.swift in Sources */,
 				EE7F600127517E3100878249 /* Ticker.swift in Sources */,

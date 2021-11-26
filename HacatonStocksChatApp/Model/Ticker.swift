@@ -36,19 +36,17 @@ struct TickerInfoElement: Codable {
     let companyName, currency, cik, isin: String
     let cusip, exchange, exchangeShortName, industry: String
     let website: String
-    let tickerInfoDescription, ceo, sector, country: String
-    let fullTimeEmployees, phone, address, city: String
-    let state, zip: String
-    let dcfDiff, dcf: Double
+    let tickerInfoDescription, sector, country: String
+    
+   
     let image: String
     let ipoDate: String
-    let defaultImage, isEtf, isActivelyTrading, isAdr: Bool
-    let isFund: Bool
+    let defaultImage: Bool
 
     enum CodingKeys: String, CodingKey {
         case symbol, price, beta, volAvg, mktCap, lastDiv, range, changes, companyName, currency, cik, isin, cusip, exchange, exchangeShortName, industry, website
         case tickerInfoDescription = "description"
-        case ceo, sector, country, fullTimeEmployees, phone, address, city, state, zip, dcfDiff, dcf, image, ipoDate, defaultImage, isEtf, isActivelyTrading, isAdr, isFund
+        case sector, country, image, ipoDate, defaultImage
     }
 }
 
