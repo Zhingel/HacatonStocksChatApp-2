@@ -23,7 +23,7 @@ class MainTabBarController: UITabBarController {
     fileprivate func setupViewControllers() {
         view.backgroundColor = .white
         let layout = UICollectionViewFlowLayout()
-        let viewController = FeedViewController()
+        let viewController = ProfileViewController()
         let navViewController = UINavigationController(rootViewController: viewController)
         navViewController.tabBarItem.image = UIImage(systemName: "person.circle")
         navViewController.tabBarItem.selectedImage = UIImage(systemName: "person.circle")
