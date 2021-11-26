@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4B118684B5E3FBE6E8A0188 /* Pods_HacatonStocksChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5897A15461D1588D7B565102 /* Pods_HacatonStocksChatApp.framework */; };
 		EE7F5FDE275172ED00878249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FDD275172ED00878249 /* AppDelegate.swift */; };
 		EE7F5FE0275172ED00878249 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FDF275172ED00878249 /* SceneDelegate.swift */; };
 		EE7F5FE2275172ED00878249 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F5FE1275172ED00878249 /* FeedViewController.swift */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5897A15461D1588D7B565102 /* Pods_HacatonStocksChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HacatonStocksChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		635953FE461CB892B13700B0 /* Pods-HacatonStocksChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HacatonStocksChatApp.debug.xcconfig"; path = "Target Support Files/Pods-HacatonStocksChatApp/Pods-HacatonStocksChatApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CD5BA85F4CEA786325E24424 /* Pods-HacatonStocksChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HacatonStocksChatApp.release.xcconfig"; path = "Target Support Files/Pods-HacatonStocksChatApp/Pods-HacatonStocksChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		EE7F5FDA275172ED00878249 /* HacatonStocksChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HacatonStocksChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7F5FDD275172ED00878249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE7F5FDF275172ED00878249 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B118684B5E3FBE6E8A0188 /* Pods_HacatonStocksChatApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F08F1676D3E0CD24E7223A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5897A15461D1588D7B565102 /* Pods_HacatonStocksChatApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF1E820E0506D5A824C91EB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				635953FE461CB892B13700B0 /* Pods-HacatonStocksChatApp.debug.xcconfig */,
+				CD5BA85F4CEA786325E24424 /* Pods-HacatonStocksChatApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EE7F5FD1275172ED00878249 = {
 			isa = PBXGroup;
 			children = (
 				EE7F5FDC275172ED00878249 /* HacatonStocksChatApp */,
 				EE7F5FDB275172ED00878249 /* Products */,
+				AF1E820E0506D5A824C91EB6 /* Pods */,
+				4F08F1676D3E0CD24E7223A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE7F5FEE275172ED00878249 /* Build configuration list for PBXNativeTarget "HacatonStocksChatApp" */;
 			buildPhases = (
+				C4965DB031204778D0B11157 /* [CP] Check Pods Manifest.lock */,
 				EE7F5FD6275172ED00878249 /* Sources */,
 				EE7F5FD7275172ED00878249 /* Frameworks */,
 				EE7F5FD8275172ED00878249 /* Resources */,
+				E277B67104192926CECE729C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +204,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C4965DB031204778D0B11157 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HacatonStocksChatApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E277B67104192926CECE729C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HacatonStocksChatApp/Pods-HacatonStocksChatApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HacatonStocksChatApp/Pods-HacatonStocksChatApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HacatonStocksChatApp/Pods-HacatonStocksChatApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE7F5FD6275172ED00878249 /* Sources */ = {
@@ -336,6 +405,7 @@
 		};
 		EE7F5FEF275172ED00878249 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 635953FE461CB892B13700B0 /* Pods-HacatonStocksChatApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -364,6 +434,7 @@
 		};
 		EE7F5FF0275172ED00878249 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD5BA85F4CEA786325E24424 /* Pods-HacatonStocksChatApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
