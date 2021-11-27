@@ -30,8 +30,8 @@ struct StockViewGraphic: View {
     var dataPoints: [CGFloat]
     var body: some View {
         LineGraph(dataPoints: dataPoints.normolized)
-            .stroke(Color.blue)
-            .padding(.vertical,5)
+            .stroke(Color.rgb(red: 0, green: 190, blue: 240), lineWidth: 2.5)
+            .padding(.vertical,8)
             .padding(.trailing, 100)
     }
 }
