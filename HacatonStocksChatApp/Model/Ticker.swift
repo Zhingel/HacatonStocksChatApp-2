@@ -33,8 +33,8 @@ struct TickerInfoElement: Codable {
     let lastDiv: Double
     let range: String
     let changes: Double
-    let companyName, currency, cik, isin: String
-    let cusip, exchange, exchangeShortName, industry: String
+    let companyName, currency, isin: String
+    let exchange, exchangeShortName, industry: String
     let website: String
     let tickerInfoDescription, sector, country: String
     
@@ -44,7 +44,7 @@ struct TickerInfoElement: Codable {
     let defaultImage: Bool
 
     enum CodingKeys: String, CodingKey {
-        case symbol, price, beta, volAvg, mktCap, lastDiv, range, changes, companyName, currency, cik, isin, cusip, exchange, exchangeShortName, industry, website
+        case symbol, price, beta, volAvg, mktCap, lastDiv, range, changes, companyName, currency, isin, exchange, exchangeShortName, industry, website
         case tickerInfoDescription = "description"
         case sector, country, image, ipoDate, defaultImage
     }
