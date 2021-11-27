@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TopBarView: View {
     @State var currentSelection: Int = 0
+    var dataPoints: [CGFloat]
     var ticker: TickerInfoElement
     var body: some View {
         
@@ -35,10 +36,13 @@ struct TopBarView: View {
             ScrollView {
                 VStack {
                     Text(ticker.companyName)
-                    Rectangle()
-                        .strokeBorder()
-                        .frame(height: 300)
-                        .padding(.horizontal,5)
+                    ZStack {
+                        Rectangle()
+                            .strokeBorder()
+                        StockViewGraphic(dataPoints: dataPoints)
+                    }
+                    .frame(height: 300)
+                    .padding(.horizontal,5)
                 }
             }
                 .pageView(ignoresSafeArea: true, edges: .bottom)

@@ -92,3 +92,12 @@ class CustomImageView: UIImageView {
         }.resume()
     }
 }
+
+extension Array where Element == CGFloat {
+    var normolized: [CGFloat] {
+        if let min = self.min(), let max = self.max() {
+            return self.map {($0 - min)/(max-min)}
+        }
+        return []
+    }
+}

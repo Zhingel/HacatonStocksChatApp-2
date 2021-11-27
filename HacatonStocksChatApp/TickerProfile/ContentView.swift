@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var ticker: TickerInfoElement
+    var dataPoints: [CGFloat]
     @ObservedObject var viewModel = FetchData()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
      //   Color.brown
-        TopBarView(ticker: ticker)
+        TopBarView(dataPoints: dataPoints, ticker: ticker)
         .navigationTitle("ticker.companyName")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: Button(action: {

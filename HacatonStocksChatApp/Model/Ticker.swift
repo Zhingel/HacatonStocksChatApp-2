@@ -51,3 +51,14 @@ struct TickerInfoElement: Codable {
 }
 
 typealias TickerInfo = [TickerInfoElement]
+
+
+struct HistoryPrice: Codable {
+    let historyPriceOpen: Double
+
+    enum CodingKeys: String, CodingKey {
+        case historyPriceOpen = "open"
+    }
+}
+
+typealias HistoryPrices = [HistoryPrice]

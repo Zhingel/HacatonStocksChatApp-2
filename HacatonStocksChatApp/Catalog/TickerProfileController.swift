@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 class TickerProfileController: UIViewController {
+    var historyPrices = [CGFloat]()
     var tickerInfo: TickerInfoElement?
     var tickerName: String?
     var flag = false
@@ -70,7 +71,7 @@ class TickerProfileController: UIViewController {
         priceNameLabel.text = "\(tickerInfo.price) $"
         navigationItem.title = tickerInfo.companyName
         self.tickerNameLabel.text = self.tickerInfo?.companyName
-        let contentView = UIHostingController(rootView: ContentView(ticker: tickerInfo))
+        let contentView = UIHostingController(rootView: ContentView(ticker: tickerInfo, dataPoints: historyPrices))
         view.addSubview(contentView.view)
         contentView.view.constraints(top: imageView.bottomAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingBottom: 0, paddingleft: 0, paddingRight: 0, width: 0, height: 0)
     }
@@ -81,6 +82,15 @@ class TickerProfileController: UIViewController {
             guard let tickerName = self.tickerName else {
                 return
             }
+            fetchData.historyPricesStockInfo(tickerSymbol: tickerName) { prices in
+                for price in prices {
+                    self.historyPrices.append(price.historyPriceOpen)
+                }
+                print(self.historyPrices)
+                DispatchQueue.main.async {
+                    self.viewDidLoad()
+                }
+            }
             fetchData.fetchDataStockInfo(tickerSymbol: tickerName) { tickerInfo in
                 self.tickerInfo = tickerInfo
                 print(self.tickerInfo)
@@ -90,7 +100,6 @@ class TickerProfileController: UIViewController {
             }
             
         }
-
         
     }
 }

@@ -27,6 +27,7 @@
 		EE7F600A2751A70D00878249 /* PageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F60092751A70D00878249 /* PageHelper.swift */; };
 		EE7F600C2751A77900878249 /* TopbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F600B2751A77900878249 /* TopbarView.swift */; };
 		EE7F600E2752056200878249 /* TickerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F600D2752056200878249 /* TickerHeaderView.swift */; };
+		EE7F601027523ED600878249 /* StockViewGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F600F27523ED600878249 /* StockViewGraphic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EE7F60092751A70D00878249 /* PageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHelper.swift; sourceTree = "<group>"; };
 		EE7F600B2751A77900878249 /* TopbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopbarView.swift; sourceTree = "<group>"; };
 		EE7F600D2752056200878249 /* TickerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerHeaderView.swift; sourceTree = "<group>"; };
+		EE7F600F27523ED600878249 /* StockViewGraphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewGraphic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				EE7F5FE1275172ED00878249 /* FeedViewController.swift */,
 				EE7F5FF4275173D300878249 /* MainTabBarController.swift */,
 				EE7F5FFB2751791000878249 /* ProfileViewController.swift */,
+				EE7F5FFD27517DE200878249 /* FetchData.swift */,
 				EE7F5FFF27517E1C00878249 /* Model */,
 				EE7F5FF8275177FC00878249 /* Catalog */,
 				EE7F60042751A60800878249 /* TickerProfile */,
@@ -138,7 +141,6 @@
 				EE7F600227518DF300878249 /* TickerProfileController.swift */,
 				EE7F600D2752056200878249 /* TickerHeaderView.swift */,
 				EE7F5FF92751781100878249 /* CatalogViewCell.swift */,
-				EE7F5FFD27517DE200878249 /* FetchData.swift */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -156,6 +158,7 @@
 			children = (
 				EE7F60052751A65200878249 /* ContentView.swift */,
 				EE7F600B2751A77900878249 /* TopbarView.swift */,
+				EE7F600F27523ED600878249 /* StockViewGraphic.swift */,
 				EE7F60072751A6F200878249 /* OffSetTabView.swift */,
 				EE7F60092751A70D00878249 /* PageHelper.swift */,
 			);
@@ -290,6 +293,7 @@
 				EE7F5FFC2751791000878249 /* ProfileViewController.swift in Sources */,
 				EE7F600127517E3100878249 /* Ticker.swift in Sources */,
 				EE7F5FFE27517DE200878249 /* FetchData.swift in Sources */,
+				EE7F601027523ED600878249 /* StockViewGraphic.swift in Sources */,
 				EE7F60082751A6F200878249 /* OffSetTabView.swift in Sources */,
 				EE7F5FF32751738500878249 /* Extensions.swift in Sources */,
 				EE7F600C2751A77900878249 /* TopbarView.swift in Sources */,
