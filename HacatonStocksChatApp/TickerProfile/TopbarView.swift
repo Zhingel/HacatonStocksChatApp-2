@@ -43,7 +43,17 @@ struct TopBarView: View {
             }
                 .pageView(ignoresSafeArea: true, edges: .bottom)
             
-            Color.green
+            ScrollView {
+                VStack {
+                    Text("userName ")
+                        .bold()
+                        .font(Font.system(size: 14))
+                    + Text("great job and perfect work")
+                        .font(Font.system(size: 14))
+                    Text(ticker.tickerInfoDescription)
+                }
+                .padding()
+            }
                 .pageView(ignoresSafeArea: true, edges: .bottom)
             
             Color.yellow
