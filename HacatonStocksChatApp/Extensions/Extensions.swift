@@ -101,3 +101,90 @@ extension Array where Element == CGFloat {
         return []
     }
 }
+
+extension View {
+    func snapshot() -> UIImage {
+        let controller = UIHostingController(rootView: self)
+        let view = controller.view
+
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
+    }
+}
+
+
+
+
+extension View {
+    func halfSheet<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder sheetView: @escaping () -> SheetView) -> some View {
+        return self
+            .background(HalfSheetHelper(sheetView: sheetView(), showSheet: showSheet))
+    }
+}
+struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
+    var sheetView: SheetView
+    @Binding var showSheet: Bool
+    let controller = UIViewController()
+    func makeUIViewController(context: Context) -> UIViewController {
+        controller.view.backgroundColor = .clear
+        return controller
+    }
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        if showSheet {
+            let sheetController = CustomHostingController (rootView: sheetView)
+            uiViewController.present(sheetController, animated: true) {
+                DispatchQueue.main.async {
+                    self.showSheet.toggle()
+                }
+            }
+        }
+    }
+}
+class CustomHostingController<Content:View>: UIHostingController<Content> {
+    override func viewDidLoad() {
+        if let presentationController = presentationController as? UISheetPresentationController {
+            presentationController.detents = [
+                .medium(),
+                .large()
+            ]
+            presentationController.prefersGrabberVisible = true
+        }
+    }
+}
+extension View {
+    func draggable() -> some View {
+        self
+            .modifier(DraggableModifier())
+    }
+}
+
+struct DraggableModifier: ViewModifier {
+    @State private var offset: CGPoint = .zero
+    @State private var previousTranslation: CGSize?
+    func body(content: Content) -> some View {
+        content
+            .offset(x: offset.x, y: offset.y)
+            .gesture(DragGesture()
+                        .onChanged({ value in
+                if let translation = previousTranslation {
+                    let delta = CGSize(width: value.translation.width - translation.width, height: value.translation.height - translation.height)
+                    offset.x += delta.width
+                    offset.y += delta.height
+                    previousTranslation = value.translation
+                } else {
+                    previousTranslation = value.translation
+                }
+            })
+                        .onEnded({ _ in
+                previousTranslation = nil
+            })
+            )
+    }
+}

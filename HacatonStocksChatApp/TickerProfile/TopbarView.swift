@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TopBarView: View {
     @State var currentSelection: Int = 0
+    @State var isPresented = false
     var dataPoints: [CGFloat]
     var ticker: TickerInfoElement
     var body: some View {
@@ -23,11 +24,12 @@ struct TopBarView: View {
                 .font(Font.system(size: 14))
                 .pageLabel()
             
-            Text("Чат")
+            Text("Новости")
                 .font(Font.system(size: 14))
                 .pageLabel()
+                .offset(x: 8)
             
-            Text("Другое")
+            Text("Чат")
                 .font(Font.system(size: 14))
                 .pageLabel()
             
@@ -43,6 +45,19 @@ struct TopBarView: View {
                     }
                     .frame(height: 300)
                     .padding(.horizontal,5)
+                    HStack {
+                        Spacer()
+                        Button {
+                            isPresented = true
+                        } label: {
+                            Image("добавить")
+                        }
+                    }
+                    .offset(y:-10)
+                  
+                }
+                .fullScreenCover(isPresented: $isPresented) {
+                    DrawView(dataPoints: dataPoints)
                 }
             }
                 .pageView(ignoresSafeArea: true, edges: .bottom)
@@ -81,8 +96,10 @@ struct TopBarView: View {
             
             Color.yellow
                 .pageView(ignoresSafeArea: true, edges: .bottom)
-            
-            Color.purple
+            ZStack {
+                Color.rgb(red: 243, green: 247, blue: 249)
+                ChatView()
+            }
                 .pageView(ignoresSafeArea: true, edges: .bottom)
         }
         .padding(.top)

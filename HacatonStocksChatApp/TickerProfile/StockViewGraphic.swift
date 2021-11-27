@@ -29,10 +29,13 @@ struct LineGraph: Shape {
 struct StockViewGraphic: View {
     var dataPoints: [CGFloat]
     var body: some View {
-        LineGraph(dataPoints: dataPoints.normolized)
-            .stroke(Color.rgb(red: 0, green: 190, blue: 240), lineWidth: 2.5)
-            .padding(.vertical,8)
-            .padding(.trailing, 100)
+        
+
+            LineGraph(dataPoints: dataPoints.normolized)
+                .stroke(Color.rgb(red: 0, green: 190, blue: 240), lineWidth: 2.5)
+                .padding(.vertical,8)
+                .padding(.trailing, 100)
+        
     }
 }
 
@@ -41,5 +44,17 @@ struct StockViewGraphic_Previews: PreviewProvider {
         StockViewGraphic(dataPoints: [0.1,0.2,0.3,0.6])
     }
 }
+
+
+//struct Home: View {
+//    @State var canvas = PKCanvasView()
+//    var body: some View {
+//        NavigationView {
+//            DrawingView(canvas: $canvas)
+//                .navigationTitle("drawing")
+//                .navigationBarTitleDisplayMode(.inline )
+//        }
+//    }
+//}
 
 

@@ -20,40 +20,30 @@ class TickerProfileController: UIViewController {
     }()
     let priceNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "100.00$"
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.text = ""
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     
-    let button: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("button Refresh", for: .normal)
-        button.addTarget(self, action: #selector(handleRefresh), for: .touchUpInside)
-        button.backgroundColor = .green
-        return button
-    }()
+
     let imageView: CustomImageView = {
         let iv = CustomImageView()
-        iv.layer.cornerRadius = 70/2
+        iv.layer.cornerRadius = 60/2
         iv.contentMode = .scaleAspectFill
-        iv.backgroundColor = .blue
+        iv.backgroundColor = .white
         iv.clipsToBounds = true
         return iv
     }()
-    @objc func handleRefresh() {
-        print("dsfsdgfd")
-        self.viewDidLoad()
-    }
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(imageView)
-        imageView.constraints(top: view.topAnchor, bottom: nil, left: view.leftAnchor, right: nil, paddingTop: 100, paddingBottom: 0, paddingleft: 15, paddingRight: 0, width: 70, height: 70)
-        view.addSubview(tickerNameLabel)
-        tickerNameLabel.constraints(top: view.topAnchor, bottom: nil, left: imageView.rightAnchor, right: nil, paddingTop: 123, paddingBottom: 0, paddingleft: 15, paddingRight: 0, width: 0, height: 0)
+        imageView.constraints(top: view.topAnchor, bottom: nil, left: view.leftAnchor, right: nil, paddingTop: 100, paddingBottom: 0, paddingleft: 15, paddingRight: 0, width: 60, height: 60)
+//        view.addSubview(tickerNameLabel)
+//        tickerNameLabel.constraints(top: view.topAnchor, bottom: nil, left: imageView.rightAnchor, right: nil, paddingTop: 123, paddingBottom: 0, paddingleft: 15, paddingRight: 0, width: 0, height: 0)
         view.addSubview(priceNameLabel)
-        priceNameLabel.constraints(top: view.topAnchor, bottom: nil, left: nil, right: view.rightAnchor, paddingTop: 123, paddingBottom: 0, paddingleft: 0, paddingRight: 15, width: 0, height: 0)
+        priceNameLabel.constraints(top: view.topAnchor, bottom: nil, left: imageView.rightAnchor, right: nil, paddingTop: 118, paddingBottom: 0, paddingleft: 15, paddingRight: 0, width: 0, height: 0)
         
         
         
