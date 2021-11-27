@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 class CatalogViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout  {
     var tickers = Ticker()
+    var tickersInfo = TickerInfo()
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .yellow
@@ -31,6 +32,13 @@ class CatalogViewController: UICollectionViewController, UICollectionViewDelegat
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let tickerProfileController = TickerProfileController()
+//        let fetchingData = FetchData()
+//        fetchingData.fetchDataStockInfo(tickerSymbol: tickers[indexPath.item].symbol){ ticker in
+//            print(ticker.price)
+//            DispatchQueue.main.async {
+//                tickerProfileController.tickerInfo = ticker
+//            }
+//        }
         tickerProfileController.tickerName = tickers[indexPath.item].symbol
         navigationController?.pushViewController(tickerProfileController, animated: false)
     }

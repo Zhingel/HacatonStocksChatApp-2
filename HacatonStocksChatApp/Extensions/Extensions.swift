@@ -58,3 +58,37 @@ extension Date {
         return "\(diff) weeks ago"
     }
 }
+import SwiftUI
+extension Color {
+    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> Color {
+       return Color(red: red/255, green: green/255, blue: blue/255, opacity: 1)
+    }
+}
+
+var imageCache = [String : UIImage]()
+class CustomImageView: UIImageView {
+    var lastURL: String?
+    func loadImage(urlString: String) {
+        lastURL = urlString
+        self.image = nil
+        if let cachedImage = imageCache[urlString] {
+            self.image = cachedImage
+            return
+        }
+        guard let url = URL(string: urlString) else {return}
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Error fetch image", error)
+                return
+            }
+            if url.absoluteString != self.lastURL {return}
+            guard let data = data else {return}
+            let photoImage = UIImage(data: data)
+            imageCache[url.absoluteString] = photoImage
+            DispatchQueue.main.async {
+                self.image = photoImage
+            }
+            
+        }.resume()
+    }
+}
