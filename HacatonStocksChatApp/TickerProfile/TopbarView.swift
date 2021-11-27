@@ -44,13 +44,32 @@ struct TopBarView: View {
                 .pageView(ignoresSafeArea: true, edges: .bottom)
             
             ScrollView {
-                VStack {
-                    Text("userName ")
+                VStack(alignment: .leading) {
+                    Text("Marcket Cap: ")
                         .bold()
                         .font(Font.system(size: 14))
-                    + Text("great job and perfect work")
+                    + Text("\(ticker.mktCap)")
                         .font(Font.system(size: 14))
-                    Text(ticker.tickerInfoDescription)
+                    Text("Country: ")
+                        .bold()
+                        .font(Font.system(size: 14))
+                    + Text("\(ticker.country)")
+                        .font(Font.system(size: 14))
+                    Text("Sector: ")
+                        .bold()
+                        .font(Font.system(size: 14))
+                    + Text("\(ticker.sector)")
+                        .font(Font.system(size: 14))
+                    Text("Ipo date: ")
+                        .bold()
+                        .font(Font.system(size: 14))
+                    + Text("\(ticker.ipoDate)")
+                        .font(Font.system(size: 14))
+                    Text("Company Info: ")
+                        .bold()
+                        .font(Font.system(size: 14))
+                    + Text(ticker.tickerInfoDescription)
+                        .font(Font.system(size: 14))
                 }
                 .padding()
             }

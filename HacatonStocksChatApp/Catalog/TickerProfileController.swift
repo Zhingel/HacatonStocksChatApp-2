@@ -46,8 +46,6 @@ class TickerProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  addChild(contentView)
-                                  ////++++++
         view.addSubview(imageView)
         imageView.constraints(top: view.topAnchor, bottom: nil, left: view.leftAnchor, right: nil, paddingTop: 100, paddingBottom: 0, paddingleft: 15, paddingRight: 0, width: 70, height: 70)
         view.addSubview(tickerNameLabel)
@@ -62,7 +60,7 @@ class TickerProfileController: UIViewController {
        
     }
     override func viewWillAppear(_ animated: Bool) {
-        fetchData() 
+        fetchData()
     }
     fileprivate func updateView() {
         print(tickerInfo)

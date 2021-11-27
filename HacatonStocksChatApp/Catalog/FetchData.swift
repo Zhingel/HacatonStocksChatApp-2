@@ -13,11 +13,9 @@ class FetchData: ObservableObject {
     var tickers = Ticker()
     var tickerInfo = TickerInfo()
 
-    func fetchData(completion: @escaping (Ticker) -> ()) {
-//        let url = URL(string: "https://financialmodelingprep.com/api/v3/search?query=\(searchingText)&limit=10&exchange=NASDAQ&apikey=\(APIKey)")
-        let url = URL(string: "https://financialmodelingprep.com/api/v3/search?query=AAPL&limit=10&exchange=NASDAQ&apikey=\(APIKey)")
+    func fetchData(searcText: String, completion: @escaping (Ticker) -> ()) {
+        let url = URL(string: "https://financialmodelingprep.com/api/v3/search?query=\(searcText)&limit=10&exchange=NASDAQ&apikey=\(APIKey)")
         var request = URLRequest(url: url!)
-
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
