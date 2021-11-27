@@ -20,6 +20,7 @@ class TickerProfileController: UIViewController {
     let priceNameLabel: UILabel = {
         let label = UILabel()
         label.text = "100.00$"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     

@@ -15,8 +15,6 @@ class FetchData: ObservableObject {
 
     func fetchData(searcText: String, completion: @escaping (Ticker) -> ()) {
         let url = URL(string: "https://financialmodelingprep.com/api/v3/search?query=\(searcText)&limit=10&exchange=NASDAQ&apikey=\(APIKey)")
-        var request = URLRequest(url: url!)
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
                 print(error!)
@@ -36,9 +34,6 @@ class FetchData: ObservableObject {
     func fetchDataStockInfo(tickerSymbol: String,  completion: @escaping (TickerInfoElement) -> ()) {
         let url = URL(string: "https://financialmodelingprep.com/api/v3/profile/\(tickerSymbol)?apikey=\(APIKey)")
 
-        var request = URLRequest(url: url!)
-
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
 
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
@@ -52,15 +47,29 @@ class FetchData: ObservableObject {
             
             let ticker = try! JSONDecoder().decode(TickerInfo.self, from: data)
             completion(ticker[0])
-//            DispatchQueue.main.async {
-//                self.tickerInfo = ticker
-//                print(self.tickerInfo)
-//            }
         }
 
         task.resume()
-         
+    }
+    func historyPricesStockInfo(tickerSymbol: String,  completion: @escaping (TickerInfoElement) -> ()) {
+        let url = URL(string: "https://financialmodelingprep.com/api/v3/profile/\(tickerSymbol)?apikey=\(APIKey)")
 
+
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            guard let data = data else {
+                print("Data is empty")
+                return
+            }
+            
+            let ticker = try! JSONDecoder().decode(TickerInfo.self, from: data)
+            completion(ticker[0])
+        }
+
+        task.resume()
     }
 }
 
